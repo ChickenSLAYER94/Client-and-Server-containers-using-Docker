@@ -6,7 +6,7 @@ This project involves the creation of two Docker containers: one for the server 
 The server-side container runs a server application using an Alpine image. It performs the following steps:
 
 1. Generates a file named `file.txt` and calculates its MD5 checksum.
-2. Stores the file and its checksum in a persistent volume called `/serverdata`.
+2. Stores the file and its checksum in a persistent volume called `/servervol` mounted in '/serverdata'.
 3. Transfers the file and checksum to the client using a Python-based HTTP server.
 4. Creates a user-defined network called `applicationserver` to facilitate communication with the client within the same network.
 
@@ -15,7 +15,7 @@ The server-side container runs a server application using an Alpine image. It pe
 The client-side container, also using an Alpine image, performs the following actions:
 
 1. Identifies the IP address of the server and establishes a connection.
-2. Receives and saves the `file.txt` and checksum files sent by the server in the persistent volume `/clientvol`.
+2. Receives and saves the `file.txt` and checksum files sent by the server in the persistent volume `/clientvol` mounted in '/clientdata'.
 3. Verifies the integrity of the received files by comparing the checksums.
    - If the checksums match, the files were successfully received from the server.
    - If the checksums do not match, there may have been an issue during transmission.
