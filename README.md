@@ -34,11 +34,20 @@ Step 2. Run command in terminal:
 ```
 After this wait for around 10 seconds for server to get ready.
 
-Step 3. Run command in different terminal: '''./fileclient.sh'''
+Step 3. Run command in different terminal: 
+```bash 
+./fileclient.sh
+```
 
-Step 4. Run command to get into shell of the client container: '''docker exec -it client sh'''
+Step 4. Run command to get into shell of the client container: 
+```bash
+docker exec -it client sh
+```
 
-Step 5. Verify the files' integrity by checking the checksum: '''md5sum -c 'checksumCheck.md5''''
+Step 5. Verify the files' integrity by checking the checksum: 
+```bash
+md5sum -c 'checksumCheck.md5'
+```
 
 If output is : "file.txt:OK" that means file is received properly.
 
