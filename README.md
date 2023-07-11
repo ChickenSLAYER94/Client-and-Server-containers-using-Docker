@@ -29,7 +29,9 @@ To run this project locally, follow these steps:
 Step 1. Clone the repository.
 
 Step 2. Run command in terminal: 
-```./fileserver.sh```
+```bash
+./fileserver.sh
+```
 After this wait for around 10 seconds for server to get ready.
 
 Step 3. Run command in different terminal: '''./fileclient.sh'''
